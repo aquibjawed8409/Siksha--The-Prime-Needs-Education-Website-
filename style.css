@@ -1,0 +1,1447 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&family=Poppins:wght@300;400&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #8e44ad;
+    --red: #e74c3c;
+    --orange: #f39c12;
+    --white: #fff;
+    --black: #2c3e50;
+    --light-color: #888;
+    --light-bg: #eee;
+    --border: .1rem solid rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    background-color: var(--light-bg);
+    /* background-color: greenyellow; */
+    /* background-color: black; */
+}
+
+section {
+    max-width: 1024px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+#menu-btn,
+#search-btn,
+#user-btn,
+#toggle-btn {
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.centre-more-btn {
+    text-align: center;
+}
+
+.more-btn {
+    display: inline-block;
+    margin: 2rem;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.more-btn:hover {
+    background-color: var(--black);
+}
+
+#menu-btn:hover,
+#search-btn:hover,
+#user-btn:hover,
+#toggle-btn:hover .fa-magnifying-glass:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transform: scale(1.07);
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.link-btn {
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.link-btn:hover {
+    background-color: var(--black);
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: var(--border);
+
+}
+
+.heading h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+}
+
+
+
+
+
+
+
+
+/* ........... Header ................  */
+
+
+.header {
+    position: sticky;
+    left: 0;
+    right: 0;
+    border-bottom: var(--border);
+    margin-left: 25rem;
+    z-index: 1000;
+}
+
+.header .flex {
+    background-color: var(--white);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: relative;
+}
+
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--red);
+    font-weight: 900;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.header .flex .search {
+    width: 40rem;
+    display: flex;
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    font-size: 2rem;
+    align-items: center;
+    padding: 0.8rem 1rem;
+}
+
+.header .flex .search.active {
+    visibility: visible;
+    position: absolute;
+    top: 99%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    border-bottom: var(--border);
+    border-top: var(--border);
+}
+
+.header .flex .search .search-input {
+    width: 100%;
+    background-color: var(--light-bg);
+    font-size: 1.7rem;
+}
+
+.header .flex .search .fa-magnifying-glass {
+    cursor: pointer;
+}
+
+.header .flex .search .fa-magnifying-glass:hover {
+    transform: scale(1.1);
+}
+
+.header .flex .icons {
+    display: flex;
+    gap: 1.8rem;
+    font-size: 1.7rem;
+}
+
+.header .flex .icons #menu-btn {
+    visibility: hidden;
+}
+
+.header .flex .icons #search-btn {
+    display: none;
+}
+
+
+.header .flex .user-profile {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    width: 30rem;
+    z-index: 100;
+    text-align: center;
+    line-height: 2.5rem;
+    visibility: hidden;
+    transition: .1s ease;
+    clip-path: polygon(56% 60%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.header .flex .user-profile.active {
+    visibility: visible;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.user-profile img {
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--light-color);
+}
+
+.user-profile h2 {
+    font-size: 1.7rem;
+}
+
+.user-profile p {
+    margin: .7rem;
+}
+
+
+.user-profile .flex-btn .login:hover,
+.user-profile .flex-btn .register:hover {
+
+    background-color: var(--black);
+}
+
+.user-profile .flex-btn .login {
+    display: inline-block;
+    width: 48%;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1.7rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-right: .5rem;
+}
+
+.user-profile .flex-btn .register {
+    display: inline-block;
+    width: 48%;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1.7rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+
+
+/* ........... Side Nav Section ......................... */
+
+.side-nav {
+    border-right: var(--border);
+    background-color: var(--white);
+    width: 25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 1.5rem;
+    transition: .2sec ease;
+}
+
+.side-nav.active{
+    visibility: visible;
+    z-index: 1000;
+}
+
+
+.side-nav .user-profile {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2.5rem;
+    position: relative;
+}
+.side-nav .user-profile .cross{
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    font-size: 2.5rem;
+    color: red;
+}
+.side-nav .user-profile .cross:hover{
+    transform: scale(1.05);
+}
+.side-nav .user-profile .logo {
+    visibility: hidden;
+    font-size: 2.5rem;
+    color: var(--red);
+    font-weight: 900;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.side-nav .links {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.side-nav .links i {
+    /* background-color: var(--white); */
+    color: var(--main-color);
+    margin-right: 1rem;
+}
+
+.side-nav .links a {
+    color: black;
+    transition: .3s ease-in;
+}
+
+.side-nav .links a:hover {
+    margin-left: 1rem;
+}
+
+
+/* ........... Footer Section ......................... */
+
+
+.footer {
+    border-top: var(--border);
+    /* box-shadow: var(--box-shadow); */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer .footer-content {
+    font-size: 1.5rem;
+}
+
+.footer .footer-content span {
+    color: var(--main-color);
+}
+
+
+
+
+/* ........... Home - Quick Option Section .................... */
+
+.quick-option-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    column-gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.quick-option-container .card {
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    height: auto;
+    border-radius: .5rem;
+    line-height: 1.5rem;
+    padding: .8rem;
+    margin: 1rem 0;
+    transition: .2s ease;
+}
+
+.quick-option-container .card:hover {
+    transform: scale(1.05);
+}
+
+.quick-option-container .card h3 {
+    font-size: 1.5rem;
+    padding: .5rem 0;
+}
+
+.quick-option-container .card h4 {
+    font-size: 1.3rem;
+    margin: .5rem 0;
+    padding: .5rem 0;
+
+}
+
+.quick-option-container .card p span {
+    font-size: 1.7rem;
+
+}
+
+.quick-option-container .card a {
+    font-size: 1.7rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+}
+
+.quick-option-container .card a:hover {
+    background-color: var(--black);
+}
+
+
+
+.quick-option-container .card p {
+    background-color: var(--light-bg);
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: .6rem;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.quick-option-container .card p i {
+    margin-right: .5rem;
+}
+
+.quick-option-container .card h4 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+
+/* ......................home - Our Course Section...................... */
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+}
+
+.card-container .card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.card-container .card .user {
+    display: flex;
+    height: 7rem;
+}
+
+.card .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.card .user .user-info {
+    line-height: 2rem;
+    margin-top: .7rem;
+}
+
+.card .user h3 {
+    font-size: 1.7rem;
+}
+
+.card .user p {
+    font-size: 1.3rem;
+}
+
+.card img {
+    width: 100%;
+    height: 17rem;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+}
+
+.card .course-name {
+    line-height: normal;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.card .course-name button {
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    color: var(--white);
+    font-size: 1.3rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.card .course-name button:hover {
+    background-color: var(--black);
+}
+
+
+/* ......................About...................... */
+
+
+
+.about-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: cente  r;
+}
+
+.about-content .image img {
+    margin-right: 4rem;
+    width: 40rem;
+    height: 30rem;
+}
+
+.about-content .choose-us {
+    line-height: 2rem;
+}
+
+.about-content .choose-us h2 {
+    font-size: 1.9rem;
+    margin-bottom: 2rem;
+}
+
+.about-content .choose-us p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ............... About Data ..................  */
+
+.about-data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 23rem);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.about-data .box {
+    display: flex;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: .5rem;
+    align-items: center;
+
+}
+
+.about-data .box:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.about-data .box i {
+    font-size: 3.5rem;
+}
+
+.about-data .box .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 1.8rem;
+    font-size: 1.7rem;
+}
+
+.about-data .box .data h3 {
+    margin-bottom: .7rem;
+}
+
+
+/* ............... About - Student Review..............  */
+
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 31.7rem);
+    justify-content: center;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+.review-box {
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.review-box p {
+    font-size: 1.5rem;
+}
+
+.review-box .review-person {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.review-box .review-person img {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
+}
+
+.review-person .review-person-name h3 {
+    font-size: 1.7rem;
+    margin-bottom: .7rem;
+}
+
+.review-person .review-person-name i {
+    color: var(--orange);
+    font-size: 1.5rem;
+}
+
+
+
+
+/* ............... Playlist Section ..............  */
+
+
+.playlist-container {
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.playlist-container .save-playlist {
+    background-color: var(--light-bg);
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.playlist-container .save-playlist:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.playlist-container p i {
+    margin-right: 1rem;
+}
+
+.playlist-container .playlist-flex {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    gap: 3rem;
+    margin-right: 2rem;
+}
+
+.playlist-flex .image img {
+    width: 35rem;
+    height: 22rem;
+    border-radius: .5rem;
+}
+
+.playlist-flex .playlist-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-detail .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.playlist-detail .user img {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.playlist-detail h3 {
+    font-size: 1.5rem;
+    /* margin-bottom: 1.3rem; */
+}
+
+.playlist-detail p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.playlist-detail #link-btn {
+    width: fit-content;
+}
+
+
+
+/* ............... Playlist - playlist-video-Section ..............  */
+
+.playlist-video-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25rem);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.playlist-video-card {
+    background-color: var(--white);
+    border-radius: .5rem;
+}
+
+.playlist-video-card img {
+    object-fit: contain;
+    width: 10rem;
+}
+
+.playlist-video-container .card-container .card .overlay-image {
+    position: relative;
+}
+
+.playlist-video-container .card-container .card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: .5rem;
+}
+
+.playlist-video-container .card-container .card .overlay i {
+    position: absolute;
+    font-size: 5rem;
+    top: 30%;
+    left: 45%;
+    color: var(--white);
+}
+
+.playlist-video-container .card-container .card .overlay-image:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+/* ............... Watch-Video Section ..............  */
+
+
+.watch-video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+}
+
+.watch-video-container video {
+    width: 100%;
+    height: 40rem;
+    border-radius: .5rem;
+    border: .5px solid rgba(0, 0, 0, 0.2);
+}
+
+.watch-video-container h2 {
+    font-size: 1.7rem;
+    margin: 1.5rem 0;
+}
+
+.watch-video-container .inline-block {
+    display: inline-block;
+    font-size: 1.3rem;
+}
+
+.watch-video-container .inline-block i {
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.fa-calendar-days:before,
+.main-color:before {
+    margin-right: 1rem;
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.watch-video-container .inline-block i span {
+    font-size: 1.6rem;
+    margin-right: .3rem;
+}
+
+.watch-video-container .user {
+    display: flex;
+    height: 7rem;
+    margin-top: 1.2rem;
+}
+
+.watch-video-container .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.watch-video-container .user .user-info {
+    line-height: 2rem;
+    margin-top: .7rem;
+}
+
+.watch-video-container .user h3 {
+    font-size: 1.7rem;
+}
+
+.watch-video-container .user p {
+    font-size: 1.3rem;
+}
+
+.watch-video-container .like {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.watch-video-container .like p {
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+}
+
+.watch-video-container .like .fa-heart {
+    color: black;
+    margin-right: .5rem;
+}
+
+.watch-video-container .like p:hover,
+.watch-video-container .like p:hover i {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+
+/* ............... Watch Video - Comments ..............  */
+
+.comment-container,
+.user-comment-container {
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.comment-container textarea {
+    padding: .7rem;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.user-comment-container .user-comment {
+    margin-top: 1.5rem;
+}
+
+.user-comment-container .user-comment .user {
+    display: flex;
+    height: 7rem;
+    margin-top: 1.2rem;
+}
+
+.user-comment-container .user-comment .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-comment-container .user-comment .user .user-info {
+    line-height: 2rem;
+    margin-top: .7rem;
+}
+
+.user-comment-container .user h3 {
+    font-size: 1.7rem;
+}
+
+.user-comment-container .user-comment .user p {
+    font-size: 1.3rem;
+
+}
+
+.user-comment-container .user-comment .comment {
+    background-color: var(--light-bg);
+    width: 100%;
+    border-radius: .5rem;
+    padding: 1rem .7rem;
+    margin-bottom: 2rem;
+}
+
+.user-comment-container .edit-comment {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: .5rem;
+    margin-right: 1rem;
+}
+
+.user-comment-container .delete-comment {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: .5rem;
+}
+
+.user-comment-container .edit-comment:hover,
+.user-comment-container .delete-comment:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ............... Teacher Section ..............  */
+
+.Teacher-section .tutor-search {
+    position: relative;
+
+}
+
+.Teacher-section input {
+    width: 100%;
+    background-color: var(--white);
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: .5rem;
+}
+
+.Teacher-section .fa-magnifying-glass {
+    position: absolute;
+    top: 36%;
+    right: 1.8rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+
+.Teacher-section .fa-magnifying-glass:hover {
+    transform: scale(1.05);
+}
+
+.teacher-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 31.8rem);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    justify-content: center;
+}
+
+.teacher-container .teacher-card {
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    transition: scale 0.5s ease-in-out;
+}
+
+.teacher-container .teacher-card:hover {
+    transform: scale(1.03);
+}
+
+.teacher-container .teacher-card h2 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.teacher-container .teacher-card p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-card .user {
+    display: flex;
+    height: 7rem;
+}
+
+.teacher-card .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.teacher-card .user .user-info {
+    line-height: 2rem;
+    margin-top: .7rem;
+}
+
+.teacher-card .user h3 {
+    font-size: 1.7rem;
+}
+
+.teacher-card .user p {
+    font-size: 1.3rem;
+}
+
+
+/* ............... Teacher Profile Section ..............  */
+
+
+.teacher-profile-info {
+    background-color: var(--white);
+    /* border-radius: .5rem; */
+    border-top: .5rem;
+    border-bottom: .5rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.teacher-profile-info img {
+    height: 6rem;
+    margin-top: 1.5rem;
+    width: 6rem;
+    border-radius: 50%;
+}
+
+.teacher-profile-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.teacher-profile-info p {
+    font-size: 1.5rem;
+}
+
+.teacher-profile-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    column-gap: 1.5rem;
+    background-color: var(--white);
+    border-top: .5rem;
+    border-bottom: .5rem;
+}
+
+.teacher-profile-details p {
+    margin: 1.5rem;
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+}
+
+.teacher-profile-details p:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+/* ............... Contact Section ..............  */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    /* padding: 3rem; */
+    gap: 3rem;
+}
+
+.contact-container img {
+    width: 60rem;
+    height: 50rem;
+    border-radius: .5rem;
+}
+
+.contact-container .contact-form {
+    background-color: var(--white);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    
+}
+
+.contact-container .contact-form h2 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.contact-container .contact-form input {
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-container .contact-form textarea {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-container .contact-form a {
+    text-align: center;
+}
+
+
+
+.contact-address-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    column-gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+.contact-address-container .address-box{
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    line-height: 3rem;
+    flex-wrap: wrap;
+
+}
+.contact-address-container .address-box i{
+    font-size: 3rem;
+    color: var(--main-color);
+}
+.contact-address-container .address-box h2{
+    font-size: 1.7rem;
+}
+
+/* ............... Login Section ..............  */
+
+.login-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container{
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem;
+    line-height: 3rem;
+    width: 40rem;
+    
+}
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.login-container form h2{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.login-container form label{
+    font-size: 1.5rem;
+}
+.login-container form label span{
+    color: red;
+    font-size: 1.7rem;
+}
+.login-container form input{
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    background-color: var(--light-bg);
+    margin: 1.5rem 0;
+    border-radius: .5rem;
+}
+.login-container form a{
+    text-align: center;
+}
+
+
+
+/* ............... Register Section ..............  */
+
+.Register-section{
+    display: flex;
+    justify-content: center;
+}
+.Register-container{
+    background-color: var(--white);
+    border-radius: .5rem;
+    padding: 1rem;
+    line-height: 3rem;
+    width: 40rem;
+    
+}
+.Register-container form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.Register-container form h2{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.Register-container form label{
+    font-size: 1.5rem;
+}
+.Register-container form label span{
+    color: red;
+    font-size: 1.7rem;
+}
+.Register-container form input{
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    background-color: var(--light-bg);
+    margin: 1.5rem 0;
+    border-radius: .5rem;
+}
+.Register-container form a{
+    text-align: center;
+}
+
+
+
+
+
+/* ............... Profile Section ..............  */
+
+.profile-container{
+    background-color: var(--white);
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    line-height: 3rem;
+}
+.profile-container img{
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    margin: 1.5rem 0;
+}
+.profile-container h2{
+    font-size: 1.7rem;
+}
+.profile-container p{
+    font-size: 1.5rem;
+}
+
+.profile-description{
+    background-color: var(--white);
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    padding: 2rem;
+}
+.profile-description .profile-box{
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+.profile-box .description-flex{
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.profile-box .description-flex i{
+    font-size: 1.8em;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
+.profile-box .description-flex i:hover{
+    background-color: var(--orange);
+}
+.profile-box .description-flex .description-data{
+    display: flex;
+    flex-direction: column;
+}
+.profile-box .description-flex .description-data h3, p{
+    font-size: 1.5rem;
+}
+
+
+
+
+
+
+/* ............... Media Query ..............  */
+
+
+
+@media (max-width: 1024px) {
+    .header .flex .search {
+        width: 30rem;
+    }
+
+    .playlist-container .playlist-flex {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .playlist-container .playlist-flex .image img {
+        width: 100%;
+    }
+
+    .playlist-flex .playlist-detail .user {
+        text-align: center;
+        justify-content: center;
+
+    }
+
+    .playlist-flex .centre {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header .flex .search {
+        visibility: hidden;
+    }
+
+    .header .flex .search .search-input,
+    .header .flex .search .fa-magnifying-glass {
+        background-color: var(--white);
+
+    }
+
+    .header .flex .icons #search-btn {
+        display: inline-block;
+    }
+
+    .header .flex .icons #menu-btn {
+        visibility: visible;
+    }
+
+    .header {
+        margin-left: 0;
+    }
+
+    .side-nav {
+        visibility: hidden;
+    }
+
+    .side-nav .user-profile .logo {
+        visibility: visible;
+    }
+    .side-nav.active .cross{
+        visibility: visible;
+    }
+    .contact-container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    } 
+    .contact-container .contact-form{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .contact-address-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    .contact-address-container .address-box{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+    .header .flex{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .about-content {
+        flex-direction: column;
+
+    }
+
+    .about-content .image img {
+        width: 100%;
+    }
+
+    .about-content .choose-us {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .playlist-container .playlist-flex {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}

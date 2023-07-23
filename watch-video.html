@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siksha - The Prime needs</title>
+    <!-- css link -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+<!-- ................. Header ........................... -->
+<header class="header">
+    <section class="flex">
+        <a href="home.html" class="logo">Siksha</a>
+        <form action="" class="search" id="search">
+            <input type="text" class="search-input" placeholder="Search for courses...">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+        <div class="icons">
+            <i id="menu-btn" class="fa-solid fa-bars"></i>
+            <i id="search-btn" class="fa-solid fa-magnifying-glass"></i>
+            <i id="user-btn" class="fa-solid fa-user"></i>
+            <i id="toggle-btn" class="fas fa-sun"></i>
+        </div>
+        <div class="user-profile" id="user-profile">
+            <img src="Images/avatar.png" alt="Student Images">
+            <h2>Md Aquib Jawed</h2>
+            <p>Student</p>
+            <a href="profile.html" class="link-btn">View Profile</a>
+            <div class="flex-btn">
+                <a href="login.html"><button class="login">Login</button></a>
+                <a href="register.html"><button class="register">Register</button></a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+        <!-- ................. Side Nav ........................... -->
+
+
+
+        <div class="side-nav" id="side-nav">
+            <div class="user-profile" id="user-profile">
+
+                <img src="Images/avatar.png" alt="Student Images">
+                <i class="fa-solid fa-rectangle-xmark cross"></i>
+                <h2>Md Aquib Jawed</h2>
+                <p>Student</p>
+                <a href="profile.html" class="link-btn">View Profile</a>
+            </div>
+            <div class="links">
+                <a href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+                <a href="about.html">
+                    <i class="fa-solid fa-question"></i>
+                    About
+                </a>
+                <a href="courses.html">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Course
+                </a>
+                <a href="teachers.html">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    Teachers
+                </a>
+                <a href="contact.html">
+                    <i class="fa-solid fa-address-book"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+
+        <!-- ................. Watch Video Cmtainer ........................... -->
+
+
+
+
+        <section class="watch-video-section">
+            <div class="watch-video-container">
+                <video src="video/html-video.mp4" muted controls></video>
+                <h2>complete HTML tutorial (part 01)</h2>
+                <div class="inline-block">
+                    <i class="fa-solid fa-calendar-days">26-10-2023</i>
+                    <i class="fa-solid fa-heart main-color"><span>44</span>likes</i>
+                </div>
+                <hr>
+                <div class="user">
+                    <img src="Images/user3.jpg" alt="user">
+                    <div class="user-info">
+                        <h3>Sent Paul</h3>
+                        <p>23-06-2023</p>
+                    </div>
+                </div>
+                <div class="like">
+                    <a href="playlist.html" class="link-btn">View Playlist</a>
+                    <p><i class="fa-regular fa-heart"></i>like</p>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dicta inventore molestiae atque, harum,
+                    possimus enim similique obcaecati quibusdam repudiandae veniam, dolores facilis reprehenderit vel
+                    officia officiis culpa non. Inventore. dolores facilis reprehenderit vel officia officiis culpa non.
+                    Inventore.</p>
+            </div>
+
+
+            <div class="heading">
+                <h2>5 Comments</h2>
+            </div>
+            <div class="comment-container">
+                <textarea name="comment" id="comment" cols="30" rows="10" placeholder="enter your comment"></textarea>
+                <a href="#" class="link-btn">Add Comment</a>
+            </div>
+
+            <div class="heading">
+                <h2>User Comments</h2>
+            </div>
+            <div class="user-comment-container">
+                <div class="user-comment">
+                    <div class="user">
+                        <img src="Images/avatar.png" alt="user">
+                        <div class="user-info">
+                            <h3>Md Aquib Jawed</h3>
+                            <p>26-06-2023</p>
+                        </div>
+                    </div>
+                    <p class="comment">This is a comment from Md Aquib Jawed</p>
+                </div>
+                <a href="#" class="edit-comment">Edit Comment</a>
+                <a href="#" class="delete-comment">Delete Comment</a>
+
+                <div class="user-comment">
+                    <div class="user">
+                        <img src="Images/user2.jpg" alt="user">
+                        <div class="user-info">
+                            <h3>John Doe</h3>
+                            <p>26-06-2023</p>
+                        </div>
+                    </div>
+                    <p class="comment">Awesome Tutorial! <br><br>keep going!</p>
+                </div>
+
+                <div class="user-comment">
+                    <div class="user">
+                        <img src="Images/user3.jpg" alt="user">
+                        <div class="user-info">
+                            <h3>John Doe</h3>
+                            <p>26-06-2023</p>
+                        </div>
+                    </div>
+                    <p class="comment">Amazing way of teaching! <br>Thank you so much!</p>
+                </div>
+
+                <div class="user-comment">
+                    <div class="user">
+                        <img src="Images/user4.jpg" alt="user">
+                        <div class="user-info">
+                            <h3>John Doe</h3>
+                            <p>26-06-2023</p>
+                        </div>
+                    </div>
+                    <p class="comment">Loved it ! Thanks for the Tutorial</p>
+                </div>
+
+                <div class="user-comment">
+                    <div class="user">
+                        <img src="Images/user5.jpg" alt="user">
+                        <div class="user-info">
+                            <h3>John Doe</h3>
+                            <p>26-06-2023</p>
+                        </div>
+                    </div>
+                    <p class="comment">this is what I have been looking for! <br>Thank you so much!</p>
+                </div>
+
+                <div class="user-comment">
+                    <div class="user">
+                        <img src="Images/user6.jpg" alt="user">
+                        <div class="user-info">
+                            <h3>John Doe</h3>
+                            <p>26-06-2023</p>
+                        </div>
+                    </div>
+                    <p class="comment">Thank You for the tutorial ! <br><br>Please emntion how I download the source code? </p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ................. Footer ........................... -->
+
+
+        <section class="footer">
+            <div class="footer-content">
+                &#169; copyright &#169; 2023 by <span>Mr. Aquib</span> | All right reserved!
+            </div>
+        </section>
+    </header>
+
+
+
+
+
+
+
+
+
+
+    <!-- javascript link -->
+    <script src="script.js"></script>
+</body>
+
+</html>
